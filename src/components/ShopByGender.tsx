@@ -1,24 +1,24 @@
 import React, { useState } from 'react';
+import WomenGoldRing from '@/assets/womens-gold-ring.jpg';
+import WomenGoldEarring from '@/assets/womens-gold-earring.jpg';
+import WomenGoldPendant from '@/assets/womens-gold-pendant.jpg';
+import WomenGoldChain from '@/assets/womens-gold-chain.jpg';
+
+
+import MenGoldRing from '@/assets/mens-gold-ring.jpg';
+import MensGoldKada from '@/assets/mens-gold-kada.jpg';
+import MensGoldChain from '@/assets/mens-gold-chain.jpg';
+import MensGoldPedant from '@/assets/mens-gold-pendant.jpg';
+
+import KidsGoldRing from '@/assets/kids-gold-ring.jpg';
+import KidsGoldEarring from '@/assets/kids-gold-earring.jpg';
+import KidsGoldBracelete from '@/assets/child-gold-bracelete.jpg';
+import KidsGoldPedant from '@/assets/child-gold-pendant.jpg';
 
 const imageData = {
-  women: [
-    'https://picsum.photos/id/1011/600/400',
-    'https://picsum.photos/id/1012/600/400',
-    'https://picsum.photos/id/1013/600/400',
-    'https://picsum.photos/id/1014/600/400',
-  ],
-  men: [
-    'https://picsum.photos/id/1021/600/400',
-    'https://picsum.photos/id/1022/600/400',
-    'https://picsum.photos/id/1023/600/400',
-    'https://picsum.photos/id/1024/600/400',
-  ],
-  child: [
-    'https://picsum.photos/id/1031/600/400',
-    'https://picsum.photos/id/1032/600/400',
-    'https://picsum.photos/id/1033/600/400',
-    'https://picsum.photos/id/1034/600/400',
-  ],
+  women: [WomenGoldRing, WomenGoldChain, WomenGoldPendant, WomenGoldEarring],
+  men: [MenGoldRing, MensGoldPedant, MensGoldChain, MensGoldKada ],
+  child: [KidsGoldRing, KidsGoldBracelete, KidsGoldPedant, KidsGoldEarring ],
 };
 
 const tabs = [
@@ -34,7 +34,7 @@ const GenderCollectionTabs = () => {
   return (
     <section className="py-12 bg-white w-full overflow-hidden">
       <div className="text-center mb-6">
-        <h2 className="text-3xl md:text-4xl font-serif  font-medium text-maroon mb-3">
+        <h2 className="text-3xl md:text-4xl font-serif font-medium text-maroon mb-3">
           Shop By Gender
         </h2>
       </div>

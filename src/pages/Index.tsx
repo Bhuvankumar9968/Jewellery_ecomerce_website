@@ -11,7 +11,7 @@ import PlatinumSection from '@/components/PlatinumJewellerySection';
 import ShopByGender from '@/components/ShopByGender';
 import WhyChooseUs from '@/components/WhyChooseUs';
 import ProductShowcase from '@/components/ProductShowcase';
-import Newsletter from '@/components/Newsletter';
+// import Newsletter from '@/components/Newsletter';
 import Footer from '@/components/Footer';
 
 const Index = () => {
@@ -28,8 +28,8 @@ const Index = () => {
         <PlatinumSection />
         <ShopByGender />
         <FeaturedCollections />
-        <WhyChooseUs />
-        <Newsletter />
+        {/* <WhyChooseUs /> */}
+        {/* <Newsletter /> */}
       </main>
       <Footer />
     </div>

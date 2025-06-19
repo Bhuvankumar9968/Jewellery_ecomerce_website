@@ -20,7 +20,7 @@ const Footer = () => {
           <div className="text-center xl:text-left">
             <img
               src="../../assets/logo.png"
-              alt="Tanishq"
+              alt="Swarna Kanchi"
               className="h-10 mb-6 mx-auto xl:mx-0"
             />
             {/* <p className="text-md font-medium mb-4">Download the Tanishq App Now</p> */}

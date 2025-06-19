@@ -4,34 +4,42 @@ import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import ProductCard from './ProductCard';
 
+// Import local images
+import BridalNecklace from '@/assets/NewArrival-1.jpg';
+import GoldEarrings from '@/assets/NewArrival-2.jpg';
+import KidsPendant from '@/assets/NewArrival-3.jpg';
+import MensBracelet from '@/assets/NewArrival-4.jpg';
+import AntiqueBangles from '@/assets/NewArrival-5.jpg';
+import AntiqueBangles2 from '@/assets/NewArrival-6.jpg';
+
 const products = [
   {
     id: 1,
-    image: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=400',
+    image: BridalNecklace,
     name: 'Bridal Necklace Set',
     price: '₹12,999'
   },
   {
     id: 2,
-    image: 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=400',
+    image: GoldEarrings,
     name: 'Daily Gold Earrings',
     price: '₹2,499'
   },
   {
     id: 3,
-    image: 'https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=400',
+    image: KidsPendant,
     name: 'Kids Pendant',
     price: '₹1,299'
   },
   {
     id: 4,
-    image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=400',
+    image: MensBracelet,
     name: 'Men’s Bracelet',
     price: '₹5,999'
   },
   {
     id: 5,
-    image: 'https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=400',
+    image: AntiqueBangles,
     name: 'Antique Bangles',
     price: '₹8,499'
   }
@@ -73,7 +81,7 @@ const ProductCarousel = () => {
 
         {/* View All Products Button */}
         <div className="mt-8 text-center">
-          <button className="px-6 py-3 bg-white text-maroon font-semibold rounded-lg  hover:bg-golden hover:text-black transition-colors duration-300">
+          <button className="px-6 py-3 bg-white text-maroon font-semibold rounded-lg hover:bg-golden hover:text-black transition-colors duration-300">
             View All Products
           </button>
         </div>
