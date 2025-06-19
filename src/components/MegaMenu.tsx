@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
+import defaultProductImage from '../../src/product-image.jpg';
 
 interface MegaMenuProps {
   isOpen: boolean;
 }
 
 // Common image used for all product icons
-const defaultProductImage = '../../src/product-image.jpg';
+// const defaultProductImage = '../../src/product-image.jpg';
 
 // Helper to create item groups
 const createItemGroup = (title: string, labels: string[]) => ({
