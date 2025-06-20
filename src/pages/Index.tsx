@@ -28,7 +28,7 @@ const Index = () => {
         <PlatinumSection />
         <ShopByGender />
         <FeaturedCollections />
-        {/* <WhyChooseUs /> */}
+        <WhyChooseUs />
         {/* <Newsletter /> */}
       </main>
       <Footer />
