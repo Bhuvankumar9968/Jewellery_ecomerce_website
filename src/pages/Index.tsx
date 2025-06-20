@@ -10,8 +10,12 @@ import GemstoneCollection from '@/components/GemstoneJewellerySection';
 import PlatinumSection from '@/components/PlatinumJewellerySection';
 import ShopByGender from '@/components/ShopByGender';
 import WhyChooseUs from '@/components/WhyChooseUs';
+import VideoGallery from '@/components/VideoGallery';
+import TrendingProducts from '@/components/TrendingProductsSection';
 import ProductShowcase from '@/components/ProductShowcase';
 import GiftingJewellerySection from '@/components/GiftingJewellerySection';
+// import TestimonialSection from '@/components/Testimonials';
+import StoreLocation from '@/components/StoreLocation';
 // import Newsletter from '@/components/Newsletter';
 import Footer from '@/components/Footer';
 
@@ -31,7 +35,11 @@ const Index = () => {
         <FeaturedCollections />
         <WhyChooseUs />
         <GiftingJewellerySection />
-        {/* Uncomment the line below to include the newsletter section */}
+        <VideoGallery />
+        <TrendingProducts />
+        {/* <TestimonialSection /> */}
+        <StoreLocation />
+        
         {/* <Newsletter /> */}
       </main>
       <Footer />
