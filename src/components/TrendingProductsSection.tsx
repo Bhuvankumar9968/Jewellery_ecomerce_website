@@ -5,14 +5,14 @@ import 'swiper/css';
 import TrendingImage from '../assets/TrendingProducts.jpg';
 
 const videos = [
-  'https://www.youtube.com/embed/Eb4O0wbePeU?autoplay=1&mute=1&loop=1&playlist=Eb4O0wbePeU&controls=0',
-  'https://www.youtube.com/embed/qrZfllvem1c?autoplay=1&mute=1&loop=1&playlist=qrZfllvem1c&controls=0',
-  'https://www.youtube.com/embed/BuM4880Lhyg?autoplay=1&mute=1&loop=1&playlist=BuM4880Lhyg&controls=0',
-  'https://www.youtube.com/embed/vm-bsszjc7E?autoplay=1&mute=1&loop=1&playlist=vm-bsszjc7E&controls=0',
-  'https://www.youtube.com/embed/KUTsELTkIzk?autoplay=1&mute=1&loop=1&playlist=KUTsELTkIzk&controls=0',
-  'https://www.youtube.com/embed/z4WWXaj6Sfw?autoplay=1&mute=1&loop=1&playlist=z4WWXaj6Sfw&controls=0',
-  'https://www.youtube.com/embed/0FYW9ZnFi7A?autoplay=1&mute=1&loop=1&playlist=0FYW9ZnFi7A&controls=0',
-  'https://www.youtube.com/embed/acJOwoiAkDY?autoplay=1&mute=1&loop=1&playlist=acJOwoiAkDY&controls=0',
+  'https://www.youtube.com/embed/Eb4O0wbePeU?controls=1',
+  'https://www.youtube.com/embed/qrZfllvem1c?controls=1',
+  'https://www.youtube.com/embed/BuM4880Lhyg?controls=1',
+  'https://www.youtube.com/embed/vm-bsszjc7E?controls=1',
+  'https://www.youtube.com/embed/KUTsELTkIzk?controls=1',
+  'https://www.youtube.com/embed/z4WWXaj6Sfw?controls=1',
+  'https://www.youtube.com/embed/0FYW9ZnFi7A?controls=1',
+  'https://www.youtube.com/embed/acJOwoiAkDY?controls=1',
 ];
 
 const TrendingProducts = () => {

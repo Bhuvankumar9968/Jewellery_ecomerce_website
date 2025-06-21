@@ -1,15 +1,12 @@
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import defaultProductImage from '../../src/product-image.jpg';
 
 interface MegaMenuProps {
   isOpen: boolean;
 }
 
-// Common image used for all product icons
-// const defaultProductImage = '../../src/product-image.jpg';
-
-// Helper to create item groups
 const createItemGroup = (title: string, labels: string[]) => ({
   title,
   items: labels.map((label) => ({
@@ -18,7 +15,6 @@ const createItemGroup = (title: string, labels: string[]) => ({
   }))
 });
 
-// Subcategory details with common image
 const subcategoryDetails: Record<
   string,
   { title: string; items: { label: string; icon: string }[] }[]
@@ -36,6 +32,7 @@ const subcategoryDetails: Record<
 };
 
 const MegaMenu = ({ isOpen }: MegaMenuProps) => {
+  const navigate = useNavigate();
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [hoveredSub, setHoveredSub] = useState<string | null>(null);
   const [mobileActive, setMobileActive] = useState<string | null>(null);
@@ -63,6 +60,12 @@ const MegaMenu = ({ isOpen }: MegaMenuProps) => {
       subcategories: ['Bridal', 'Daily Wear']
     }
   ];
+
+  const handleItemClick = (category: string, subcategory: string, label: string) => {
+    navigate('/products', {
+      state: { category, subcategory, label }
+    });
+  };
 
   return (
     <nav
@@ -134,7 +137,11 @@ const MegaMenu = ({ isOpen }: MegaMenuProps) => {
                       <h4 className="text-maroon font-semibold mb-2">{group.title}</h4>
                       <ul className="space-y-2">
                         {group.items.map((item) => (
-                          <li key={item.label} className="flex items-center space-x-2 cursor-pointer">
+                          <li
+                            key={item.label}
+                            className="flex items-center space-x-2 cursor-pointer"
+                            onClick={() => handleItemClick(activeMenu, hoveredSub, item.label)}
+                          >
                             <img
                               src={item.icon}
                               alt={item.label}
@@ -202,6 +209,7 @@ const MegaMenu = ({ isOpen }: MegaMenuProps) => {
                                 <div
                                   key={item.label}
                                   className="flex flex-col items-center text-center cursor-pointer"
+                                  onClick={() => handleItemClick(menu.title, subcat, item.label)}
                                 >
                                   <img
                                     src={item.icon}
