@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Grid, List } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import TopBar from '@/components/TopBar';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import FilterBar from '@/components/FilterBar';
@@ -80,6 +81,7 @@ const ProductListing = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <TopBar />
       <Header />
 
       {/* Full-width banner */}

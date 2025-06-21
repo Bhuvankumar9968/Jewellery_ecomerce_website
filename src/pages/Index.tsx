@@ -1,5 +1,6 @@
 
 import React from 'react';
+import TopBar from '@/components/TopBar';
 import Header from '@/components/Header';
 import HeroCarousel from '@/components/HeroCarousel';
 import FeaturedCollections from '@/components/FeaturedCollections';
@@ -22,6 +23,7 @@ import Footer from '@/components/Footer';
 const Index = () => {
   return (
     <div className="min-h-screen bg-muted">
+      <TopBar />
       <Header />
       <main>
         <HeroCarousel />
