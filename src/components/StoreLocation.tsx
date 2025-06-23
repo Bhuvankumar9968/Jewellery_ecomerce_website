@@ -9,25 +9,25 @@ const storeBranches = [
     id: 1,
     name: 'Kothapet',
     image: Store1,
-    mapLink: 'https://www.google.com/maps/place/Swarna+Kanchi/@17.3604579,78.542079,1838m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3bcb98bfecec5427:0x1e11688aab84a1b4!8m2!3d17.3604528!4d78.5446539!16s%2Fg%2F11bw47ghgc?entry=ttu&g_ep=EgoyMDI1MDYxNi4wIKXMDSoASAFQAw%3D%3D',
+    mapLink: 'https://www.google.com/maps/place/Swarna+Kanchi',
   },
   {
     id: 2,
     name: 'Peerzadiguda',
     image: Store2,
-    mapLink: 'https://www.google.com/maps/place/Swarna+Kanchi/@17.3604579,78.542079,1838m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3bcb98bfecec5427:0x1e11688aab84a1b4!8m2!3d17.3604528!4d78.5446539!16s%2Fg%2F11bw47ghgc?entry=ttu&g_ep=EgoyMDI1MDYxNi4wIKXMDSoASAFQAw%3D%3D',
+    mapLink: 'https://www.google.com/maps/place/Swarna+Kanchi',
   },
   {
     id: 3,
     name: 'Dilsukhnagar',
     image: Store1,
-    mapLink: 'https://www.google.com/maps/place/Swarna+Kanchi/@17.3604579,78.542079,1838m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3bcb98bfecec5427:0x1e11688aab84a1b4!8m2!3d17.3604528!4d78.5446539!16s%2Fg%2F11bw47ghgc?entry=ttu&g_ep=EgoyMDI1MDYxNi4wIKXMDSoASAFQAw%3D%3D',
+    mapLink: 'https://www.google.com/maps/place/Swarna+Kanchi',
   },
   {
     id: 4,
     name: 'Nalgonda',
     image: Store2,
-    mapLink: 'https://www.google.com/maps/place/Swarna+Kanchi/@17.3604579,78.542079,1838m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3bcb98bfecec5427:0x1e11688aab84a1b4!8m2!3d17.3604528!4d78.5446539!16s%2Fg%2F11bw47ghgc?entry=ttu&g_ep=EgoyMDI1MDYxNi4wIKXMDSoASAFQAw%3D%3D',
+    mapLink: 'https://www.google.com/maps/place/Swarna+Kanchi',
   },
 ];
 
@@ -42,22 +42,17 @@ const OurStores = () => {
   }, []);
 
   return (
-    <section className="bg-[#fdf6f0] py-12 w-full overflow-hidden">
-        
-    <div className="text-center mb-8">
-    <h2 className="text-3xl md:text-4xl font-serif font-medium text-maroon mb-3">
-      Our Stores
-    </h2>
-    {/* <p className="text-warmGrey text-base md:text-lg max-w-2xl mx-auto">
-      Elegant platinum pieces that embody timeless sophistication
-    </p> */}
-  </div>
+    <section className="bg-white py-12 w-full overflow-hidden">
+      <div className="text-center mb-8">
+        <h2 className="text-3xl md:text-4xl font-serif font-medium text-maroon mb-3">
+          Our Stores
+        </h2>
+      </div>
 
       <div className="max-w-[1440px] px-4 mx-auto flex flex-col md:flex-row gap-6 items-stretch">
-        
         {/* Left Carousel Section */}
         <div className="w-full md:w-1/2 relative pb-4">
-          <div className="aspect-[9/5] w-full rounded overflow-hidden shadow-md relative">
+          <div className="aspect-[16/8] w-full rounded overflow-hidden shadow-md relative group">
             {storeBranches.map((store, index) => (
               <div
                 key={store.id}
@@ -69,23 +64,27 @@ const OurStores = () => {
                   href={store.mapLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block w-full h-full relative"
+                  className="block w-full h-full relative overflow-hidden"
                 >
                   <img
                     src={store.image}
                     alt={store.name}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-105"
                   />
-                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-black/0 text-white px-4 py-3 flex justify-between items-end">
-                    <div className="text-lg md:text-base font-medium">{store.name}</div>
-                    <span className="text-sm md:text-base underline inline-flex items-center gap-1 hover:text-gray-200">
+                  <div className="absolute bottom-0 left-0 right-0 bg-golden text-black px-4 py-2 text-center text-sm md:text-base font-medium">
+                    <span className="inline-flex items-center justify-center gap-1">
                       <MapPin className="w-4 h-4" />
-                      Get Directions
+                      Visit Our Store
                     </span>
                   </div>
                 </a>
               </div>
             ))}
+          </div>
+
+          {/* Store Name */}
+          <div className="mt-2 text-maroon text-xl font-normal text-left">
+            {storeBranches[currentIndex].name}
           </div>
 
           {/* Pagination Dots */}
@@ -103,50 +102,45 @@ const OurStores = () => {
         </div>
 
         {/* Right Section */}
-<div className="w-full md:w-1/2 flex flex-col gap-2">
-  <div className="flex flex-col h-full gap-2">
-    
-    {/* Top Card */}
-    <div className="bg-[#fdf6f0] rounded border border-gray-200 p-6 text-center flex-1 flex flex-col justify-center items-center">
-      <a href="tel:#" className="text-3xl font-semibold text-maroon hover:underline mb-2">
-        +91-9513-777-002
-      </a>
-      <p className="text-base text-gray-600">For store queries and schemes</p>
-    </div>
+        <div className="w-full md:w-1/2 flex flex-col gap-2">
+          <div className="flex flex-col h-full gap-2">
+            {/* Top Card */}
+            <div className="bg-white rounded border border-gray-300 p-6 text-center flex-1 flex flex-col justify-center items-center">
+              <a href="tel:+919513777002" className="text-3xl font-semibold text-maroon hover:underline mb-2">
+                +91-9513-777-002
+              </a>
+              <p className="text-base text-gray-600">For store queries and schemes</p>
+            </div>
 
-    {/* Bottom Cards */}
-    <div className="flex gap-2 flex-1">
-      
-      {/* Follow Us */}
-      <div className="bg-[#fdf6f0] rounded border border-gray-200 p-6 text-center w-1/2 flex flex-col justify-center">
-        <h3 className="text-xl font-normal text-black mb-4">Follow Us On</h3>
-        <div className="flex justify-center gap-4 text-maroon">
-          <a href="#"><Facebook className="w-5 h-5" /></a>
-          <a href="#"><Instagram className="w-5 h-5" /></a>
-          <a href="#"><Twitter className="w-5 h-5" /></a>
-          <a href="#"><Youtube className="w-5 h-5" /></a>
+            {/* Bottom Cards */}
+            <div className="flex gap-2 flex-1">
+              {/* Follow Us */}
+              <div className="bg-white rounded border border-gray-200 p-6 text-center w-1/2 flex flex-col justify-center">
+                <h3 className="text-xl font-normal text-black mb-4">Follow Us On</h3>
+                <div className="flex justify-center gap-4 text-maroon">
+                  <a href="#"><Facebook className="w-5 h-5" /></a>
+                  <a href="#"><Instagram className="w-5 h-5" /></a>
+                  <a href="#"><Twitter className="w-5 h-5" /></a>
+                  <a href="#"><Youtube className="w-5 h-5" /></a>
+                </div>
+              </div>
+
+              {/* Chat with Us */}
+              <div className="bg-white rounded border border-gray-200 p-6 text-center w-1/2 flex flex-col justify-center">
+                <h3 className="text-xl font-normal text-black mb-2">Chat with Us</h3>
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-maroon underline inline-flex items-center justify-center gap-1 text-xl font-medium"
+                >
+                  <MessageCircle className="w-4 h-4" />
+                  9513-777-002
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-
-      {/* Chat with Us */}
-      <div className="bg-[#fdf6f0] rounded border border-gray-200 p-6 text-center w-1/2 flex flex-col justify-center">
-        <h3 className="text-xl font-normal text-black mb-2">Chat with Us</h3>
-        <a
-          href="#"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-maroon underline inline-flex items-center justify-center gap-1 text-xl font-medium"
-        >
-          <MessageCircle className="w-4 h-4" />
-          9513-777-002
-        </a>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-        
       </div>
     </section>
   );
