@@ -72,7 +72,7 @@ const ProductCard = ({
               src={img}
               alt={`${name}-${index}`}
               className={`h-full w-full object-cover flex-none shrink-0 grow-0 basis-full transition-transform duration-500 ${
-                !hasMultipleImages ? 'group-hover:md:scale-105' : ''
+                !hasMultipleImages ? 'group-hover:md:scale-110' : ''
               }`}
             />
           ))}
@@ -89,7 +89,7 @@ const ProductCard = ({
         {showDelete ? (
           <button
             onClick={handleDelete}
-            className="absolute top-2 right-2 text-red-600 hover:text-red-800 transition-colors"
+            className="absolute top-2 right-2 text-yellow-500 hover:text-golden transition-colors"
             aria-label="Delete"
           >
             <Trash2 size={22} />
