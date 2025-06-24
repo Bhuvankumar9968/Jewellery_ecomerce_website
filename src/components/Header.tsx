@@ -73,7 +73,7 @@ const Header = () => {
             </a>
 
             {/* Wishlist */}
-            <Link to="/wishlist" className="relative flex flex-col items-center justify-center">
+           <Link to="/wishlist" className="relative flex flex-col items-center justify-center">
   <Heart className="w-6 h-6" />
   <Badge className="absolute top-[-14px] right-[-12px] text-xs">0</Badge>
   <span className="hidden md:block text-xs mt-1">Wishlist</span>
