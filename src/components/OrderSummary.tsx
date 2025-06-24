@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { ChevronDown, ChevronRight, Percent } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { ChevronDown, ChevronRight } from 'lucide-react';
+
 import gpay from '@/assets/gpay.svg';
 import maestro from '@/assets/maestro.svg';
 import rupay from '@/assets/rupay.svg';
@@ -11,12 +13,13 @@ const CheckoutStepper = ({
   step2Active = false,
   summaryCollapsible = true,
   showSummary = true,
-  buttonText = 'Add Address',
   discount = 0,
   shipping = 0,
   tax = 0,
 }) => {
+  const navigate = useNavigate(); // 👈 React Router navigation
   const [isSummaryCollapsed, setIsSummaryCollapsed] = useState(summaryCollapsible);
+  const [coupon, setCoupon] = useState('');
 
   const subtotal = orderCards.reduce(
     (acc, card) => acc + card.price * card.quantity,
@@ -29,6 +32,11 @@ const CheckoutStepper = ({
     if (summaryCollapsible && orderCards.length > 0) {
       setIsSummaryCollapsed(!isSummaryCollapsed);
     }
+  };
+
+  const handleApplyCoupon = () => {
+    console.log('Coupon Applied:', coupon);
+    // Add actual discount logic here if needed
   };
 
   return (
@@ -60,11 +68,20 @@ const CheckoutStepper = ({
 
       <hr className="mb-4" />
 
-      {/* Discount Code Button */}
-      <div className="flex justify-center mb-4">
-        <button className="flex items-center gap-2 bg-red-50 border border-red-500 px-4 py-2 rounded-md w-4/5 justify-center">
-          <Percent size={16} />
-          <span className="text-sm font-medium">Apply a Discount Code</span>
+      {/* Coupon Code Input */}
+      <div className="mb-4 flex gap-2">
+        <input
+          type="text"
+          placeholder="Enter discount code"
+          className="flex-1 border border-gray-300 px-4 py-2 rounded-md text-sm outline-none"
+          value={coupon}
+          onChange={(e) => setCoupon(e.target.value)}
+        />
+        <button
+          onClick={handleApplyCoupon}
+          className="bg-maroon text-white text-sm font-medium px-4 py-2 rounded-md hover:bg-maroon-dark transition"
+        >
+          Apply
         </button>
       </div>
 
@@ -92,29 +109,29 @@ const CheckoutStepper = ({
           {(!summaryCollapsible || isSummaryCollapsed) && (
             <div className="space-y-2">
               <div className="flex justify-between text-sm">
-                <span className='text-gray-600'>Subtotal</span>
+                <span className="text-gray-600">Subtotal</span>
                 <span className="font-medium">₹{subtotal.toLocaleString()}</span>
               </div>
 
               <div className="flex justify-between text-sm">
-                <span className='text-gray-600'>Discount</span>
+                <span className="text-gray-600">Discount</span>
                 <span className="font-medium text-green-600">− ₹{discount.toLocaleString()}</span>
               </div>
 
               <div className="flex justify-between text-sm">
-                <span className='text-gray-600'>Shipping</span>
+                <span className="text-gray-600">Shipping</span>
                 <span className="font-medium">₹{shipping.toLocaleString()}</span>
               </div>
 
               <div className="flex justify-between text-sm">
-                <span className='text-gray-600'>Tax</span>
+                <span className="text-gray-600">Tax</span>
                 <span className="font-medium">₹{tax.toLocaleString()}</span>
               </div>
 
               <hr />
 
               <div className="flex justify-between text-base font-semibold">
-                <span className='text-gray-600'>Total</span>
+                <span className="text-gray-600">Total</span>
                 <span>₹{total.toLocaleString()}</span>
               </div>
             </div>
@@ -123,41 +140,25 @@ const CheckoutStepper = ({
       )}
 
       {/* Continue Button */}
-      <button className="mt-6 w-full bg-maroon text-white text-md font-normal py-3 rounded-md hover:bg-maroon-dark transition">
-        {buttonText}
+      <button
+        onClick={() => navigate('/checkout')}
+        className="mt-6 w-full bg-maroon text-white text-md font-normal py-3 rounded-md hover:bg-red-800 transition"
+      >
+        Add Address
       </button>
 
       {/* Payment Logos */}
       <div className="text-center mt-4 text-md text-gray-500">WE ACCEPT</div>
       <div className="flex justify-center gap-3 mt-2">
-  {[
-    {
-      src: visa,
-      alt: 'Visa',
-    },
-    {
-      src: mastercard,
-      alt: 'Mastercard',
-    },
-    {
-      src: rupay,
-      alt: 'RuPay',
-    },
-    {
-      src: rupay,
-      alt: 'UPI',
-    },
-  ].map(({ src, alt }, i) => (
-    <img
-      key={i}
-      src={src}
-      alt={alt}
-      className="h-4 w-auto object-contain mt-2" // reduced from h-6 to h-4
-    />
-  ))}
-</div>
-
-
+        {[visa, mastercard, rupay, rupay].map((src, i) => (
+          <img
+            key={i}
+            src={src}
+            alt="Payment Method"
+            className="h-4 w-auto object-contain mt-2"
+          />
+        ))}
+      </div>
     </div>
   );
 };

@@ -10,6 +10,7 @@ import ProductDetail from "./pages/ProductDetail";
 import Wishlist from "./pages/Wishlist";
 import NotFound from "./pages/NotFound";
 import ShoppingCart from "./pages/ShoppingCart"
+import Checkout from "./pages/Checkout";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -25,6 +26,7 @@ const App = () => (
           <Route path="*" element={<NotFound />} />
           <Route path="/Cart" element={<ShoppingCart />} />
           <Route path="/wishlist" element={<Wishlist />} />
+          <Route path="/checkout" element={<Checkout />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
