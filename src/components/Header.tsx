@@ -13,6 +13,7 @@ import { Badge } from '@/components/ui/badge';
 import MegaMenu from './MegaMenu';
 import MobileMenu from './MobileMenu.tsx';
 import logo from '../../src/logo.png';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -72,11 +73,11 @@ const Header = () => {
             </a>
 
             {/* Wishlist */}
-            <a href="/wishlist" className="relative flex flex-col items-center justify-center">
-              <Heart className="w-6 h-6" />
-              <Badge className="absolute top-[-14px] right-[-12px] text-xs">0</Badge>
-              <span className="hidden md:block text-xs mt-1">Wishlist</span>
-            </a>
+            <Link to="/wishlist" className="relative flex flex-col items-center justify-center">
+  <Heart className="w-6 h-6" />
+  <Badge className="absolute top-[-14px] right-[-12px] text-xs">0</Badge>
+  <span className="hidden md:block text-xs mt-1">Wishlist</span>
+</Link>
 
             {/* Cart */}
             <a href="/cart" className="relative flex flex-col items-center justify-center">
