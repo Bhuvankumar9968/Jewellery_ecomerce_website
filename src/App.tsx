@@ -9,7 +9,7 @@ import ProductListing from "./pages/ProductListing";
 import ProductDetail from "./pages/ProductDetail";
 import Wishlist from "./pages/Wishlist";
 import NotFound from "./pages/NotFound";
-
+import ShoppingCart from "./pages/ShoppingCart"
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -23,6 +23,7 @@ const App = () => (
           <Route path="/products" element={<ProductListing />} />
           <Route path="/productDetail" element={<ProductDetail />} />
           <Route path="*" element={<NotFound />} />
+          <Route path="/Cart" element={<ShoppingCart />} />
           <Route path="/wishlist" element={<Wishlist />} />
         </Routes>
       </BrowserRouter>
