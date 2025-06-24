@@ -14,7 +14,6 @@ import MegaMenu from './MegaMenu';
 import MobileMenu from './MobileMenu.tsx';
 import logo from '../../src/logo.png';
 import { Link } from 'react-router-dom';
-
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
