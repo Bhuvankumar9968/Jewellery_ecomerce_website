@@ -8,7 +8,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Separator } from "@/components/ui/separator";
 import TopBar from "@/components/TopBar";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -17,13 +16,12 @@ import Hallmarked from "@/assets/Hallmarked-Diamond.png";
 import Ring1 from "@/assets/Ring-1.png";
 import Ring2 from "@/assets/Ring-2.png";
 import Ring3 from "@/assets/Ring-3.png";
-import ReactImageMagnify from "react-image-magnify";
+import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 
 const ProductDetail = () => {
   const [selectedSize, setSelectedSize] = useState("13");
   const [selectedPurity, setSelectedPurity] = useState("22K");
   const [selectedOccasion, setSelectedOccasion] = useState("Daily Wear");
-  const [selectedColor, setSelectedColor] = useState("yellow");
   const [quantity, setQuantity] = useState(1);
   const [selectedImage, setSelectedImage] = useState(0);
 
@@ -36,7 +34,6 @@ const ProductDetail = () => {
     subcategory: "Daily Wear",
     availability: "In Stock",
     images: [Ring1, Ring2, Ring3],
-
     sizes: [
       { value: "11", label: "11 (51.2 mm)" },
       { value: "12", label: "12 (52.2 mm)" },
@@ -53,11 +50,6 @@ const ProductDetail = () => {
       { value: "Daily Wear", label: "Daily Wear" },
       { value: "Party Wear", label: "Party Wear" },
       { value: "Wedding", label: "Wedding" },
-    ],
-    colors: [
-      { value: "yellow", label: "Yellow Gold", color: "#FFD700" },
-      { value: "rose", label: "Rose Gold", color: "#E7B5A4" },
-      { value: "white", label: "White Gold", color: "#F8F8FF" },
     ],
     priceBreakdown: {
       gold: 19421,
@@ -113,33 +105,24 @@ const ProductDetail = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Product Images */}
-
-          {/* Product Images Section */}
           <div className="space-y-4">
-            {/* Main Image with Magnifier */}
-            <div className="max-w-[600px] z-1000 mx-auto rounded-lg bg-white">
-              <ReactImageMagnify
-                {...{
-                  smallImage: {
-                    alt: product.name,
-                    isFluidWidth: true,
-                    src: product.images[selectedImage],
-                  },
-                  largeImage: {
-                    src: product.images[selectedImage],
-                    width: 1200,
-                    height: 1200,
-                  },
-                  enlargedImageContainerDimensions: {
-                    width: "200%",
-                    height: "100%",
-                  },
-                  lensStyle: { backgroundColor: "rgba(0,0,0,.2)" },
-                  imageStyle: { borderRadius: "0.5rem" },
-                  isHintEnabled: true,
-                  shouldUsePositiveSpaceLens: true,
-                }}
-              />
+            {/* Zoomable Image */}
+            <div className="max-w-[600px] mx-auto rounded-lg bg-white overflow-hidden border">
+              <TransformWrapper
+                initialScale={1}
+                minScale={1}
+                maxScale={3}
+                doubleClick={{ disabled: true }}
+                wheel={{ step: 0.1 }}
+              >
+                <TransformComponent>
+                  <img
+                    src={product.images[selectedImage]}
+                    alt={product.name}
+                    className="w-full h-auto object-contain rounded-lg"
+                  />
+                </TransformComponent>
+              </TransformWrapper>
             </div>
 
             {/* Thumbnails */}
@@ -196,7 +179,7 @@ const ProductDetail = () => {
               </p>
             </div>
 
-            {/* Dropdowns in a row */}
+            {/* Dropdowns */}
             <div className="grid grid-cols-3 gap-4">
               <div>
                 <label className="block text-sm font-medium mb-1">Size</label>
@@ -255,7 +238,7 @@ const ProductDetail = () => {
               </div>
             </div>
 
-            {/* Price Breakdown - side by side */}
+            {/* Price Breakdown */}
             <div className="bg-white rounded-lg">
               <h3 className="font-medium mb-5">Price Breakdown</h3>
               <div className="flex items-stretch text-center text-sm text-gray-800 divide-x divide-gray-300">
@@ -288,27 +271,11 @@ const ProductDetail = () => {
               </div>
             </div>
 
-            {/* Quantity and Actions */}
+            {/* Quantity & Buy Now */}
             <div className="space-y-4">
               <div className="flex items-center space-x-4">
-                {/* <div className="flex items-center border rounded-lg">
-                  <Button variant="ghost" size="sm" onClick={() => setQuantity(Math.max(1, quantity - 1))}>
-                    <Minus className="w-4 h-4" />
-                  </Button>
-                  <span className="px-4 py-2 min-w-[50px] text-center">{quantity}</span>
-                  <Button variant="ghost" size="sm" onClick={() => setQuantity(quantity + 1)}>
-                    <Plus className="w-4 h-4" />
-                  </Button>
-                </div> */}
-
-                {/* <Button variant="outline" size="lg">
-                  <Heart className="w-5 h-5 mr-2" />
-                  Wishlist
-                </Button> */}
-
                 <Button variant="outline" size="lg">
                   <Share2 className="w-5 h-5 mr-2" />
-                  {/* Share */}
                 </Button>
 
                 <Button
@@ -323,7 +290,6 @@ const ProductDetail = () => {
             <div className="text-sm text-gray-600">
               <p>Dispatch by: {product.dispatchDate}</p>
 
-              {/* Certification Info */}
               <div className="flex items-center space-x-4 mt-2">
                 <span className="text-sm font-medium text-gray-700 whitespace-nowrap">
                   100% Certified by <br /> International Standards
