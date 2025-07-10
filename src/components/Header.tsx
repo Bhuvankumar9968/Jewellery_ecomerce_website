@@ -38,7 +38,7 @@ const Header = () => {
   }, []);
 
   return (
-    <header className="bg-[#501614] shadow-md sticky top-0 z-[1000]">
+    <header className="bg-[#5e313a] shadow-md sticky top-0 z-[1000]">
       <div className="container mx-auto px-4 py-4 relative z-[1000]">
         <div className="flex items-center justify-between">
           {/* Left */}

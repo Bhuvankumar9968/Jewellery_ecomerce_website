@@ -5,7 +5,7 @@ import { Phone, MessageCircle } from 'lucide-react';
 
 const TopBar = () => {
   return (
-    <div className="hidden md:flex justify-between items-center bg-[#871f1b] text-white py-2 px-6 text-sm">
+    <div className="hidden md:flex justify-between items-center bg-[#5E1412] text-white py-2 px-6 text-sm">
       {/* Left Section */}
       <div className="flex items-center space-x-6">
         <span>For any queries reach out to us on :</span>

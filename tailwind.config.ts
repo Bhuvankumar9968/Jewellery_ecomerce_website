@@ -53,8 +53,8 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				golden: '#E7B10A',
-				maroon: '#7B1F30',
+				golden: '#E4C77A',
+				maroon: '#944954',
 				bronze: '#CD853F',
 				warmGrey: '#8B7D6B'
 			},
