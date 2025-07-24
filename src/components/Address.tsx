@@ -7,7 +7,9 @@ const Address = () => {
   // Prevent background scroll when modal is open
   useEffect(() => {
     document.body.style.overflow = showModal ? 'hidden' : 'auto';
-    return () => (document.body.style.overflow = 'auto');
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
   }, [showModal]);
 
   const inputClass =

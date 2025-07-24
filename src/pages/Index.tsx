@@ -1,4 +1,3 @@
-
 import React from 'react';
 import TopBar from '@/components/TopBar';
 import Header from '@/components/Header';
@@ -15,7 +14,8 @@ import VideoGallery from '@/components/VideoGallery';
 import TrendingProducts from '@/components/TrendingProductsSection';
 import ProductShowcase from '@/components/ProductShowcase';
 import GiftingJewellerySection from '@/components/GiftingJewellerySection';
-// import TestimonialSection from '@/components/Testimonials';
+import InstagramSection from '@/components/instagram'; // You can keep or remove your old Instagram component
+import ElfsightInstagramFeed from "@/components/ElfsightInstagramFeed"; // Import the new Elfsight component
 import StoreLocation from '@/components/StoreLocation';
 // import Newsletter from '@/components/Newsletter';
 import Footer from '@/components/Footer';
@@ -39,7 +39,10 @@ const Index = () => {
         <GiftingJewellerySection />
         <VideoGallery />
         <TrendingProducts />
-        {/* <TestimonialSection /> */}
+        <InstagramSection />
+        
+        <ElfsightInstagramFeed />
+
         <StoreLocation />
         
         {/* <Newsletter /> */}
