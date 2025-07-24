@@ -1,47 +1,51 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import {
+  Menu,
   Search,
+  Store,
   User,
   Heart,
   ShoppingCart,
-  Menu,
-  Store,
+  Truck,
+  Phone,
+  MessageCircle,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 import MegaMenu from './MegaMenu';
-import MobileMenu from './MobileMenu.tsx';
+import MobileMenu from './MobileMenu';
 import logo from '../../src/logo.png';
-import { Link } from 'react-router-dom';
 
-const Header = () => {
+const Header = ({ user, cartCount = 0, wishCount = 0, handleLogout }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isAccountDropdownOpen, setIsAccountDropdownOpen] = useState(false);
-  const [isMegaOpen, setIsMegaOpen] = useState(false);
-  const accountRef = useRef(null);
-
-  // Close dropdown on outside click
-  useEffect(() => {
-    function handleClickOutside(event) {
-      if (
-        accountRef.current &&
-        !accountRef.current.contains(event.target)
-      ) {
-        setIsAccountDropdownOpen(false);
-      }
-    }
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, []);
 
   return (
-    <header className="bg-[#5e313a] shadow-md sticky top-0 z-[1000]">
-      <div className="container mx-auto px-4 py-4 relative z-[1000]">
+    <header className="bg-[#501614] shadow-md sticky top-0 z-50">
+      {/* Top Row - Contact Info */}
+      <div className="hidden md:flex justify-end items-center px-6 py-2 bg-[#3c1010] text-white text-sm space-x-6">
+        <a
+          href="tel:+919513777001"
+          className="flex items-center space-x-1 hover:underline transition"
+        >
+          <Phone className="w-4 h-4" />
+          <span>+91 9513777001</span>
+        </a>
+        <a
+          href="https://wa.me/919513777001"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center space-x-1 hover:underline transition"
+        >
+          <MessageCircle className="w-4 h-4" />
+          <span>+91 9513777001</span>
+        </a>
+      </div>
+
+      {/* Main Header */}
+      <div className="container mx-auto px-4 md:px-12 py-4">
         <div className="flex items-center justify-between">
-          {/* Left */}
+          {/* Left - Hamburger + Logo */}
           <div className="flex items-center space-x-4">
             <div className="md:hidden">
               <Button
@@ -54,91 +58,106 @@ const Header = () => {
               </Button>
             </div>
             <div className="w-16 h-16 rounded-full overflow-hidden mx-auto">
-              <img
-                src={logo}
-                alt="Sri Swarna Kanchi Logo"
-                className="object-cover w-full h-full"
-              />
+              <Link to="/">
+                <img
+                  src={logo}
+                  alt="Sri Swarna Kanchi Logo"
+                  className="object-cover w-full h-full"
+                />
+              </Link>
             </div>
           </div>
 
-          {/* Search */}
+          {/* Center - Search bar */}
           <div className="hidden md:flex flex-1 max-w-lg mx-6">
-            <div className="relative w-full">
-              <Input
+            <div className="relative w-full border-b border-white">
+              <input
+                type="text"
                 placeholder="Search here..."
-                className="w-full px-4 py-2 rounded border border-white bg-transparent text-white placeholder:text-white focus:border-[#d4af37] outline-none"
+                className="w-full bg-transparent text-white placeholder:text-white px-0 py-1 border-none outline-none"
               />
-              <Search className="absolute right-3 top-3 w-4 h-4 text-white pointer-events-none" />
+              <Search className="absolute right-0 top-1/2 -translate-y-1/2 w-4 h-4 text-white" />
             </div>
           </div>
 
-          {/* Right Icons */}
+          {/* Right - Icons */}
           <div className="flex items-center space-x-4 text-white text-center">
             {/* Store */}
-            <a href="/stores" className="flex flex-col items-center justify-center">
+            <Link to="/stores" className="flex flex-col items-center justify-center">
               <Store className="w-6 h-6" />
               <span className="hidden md:block text-xs mt-1">Stores</span>
-            </a>
+            </Link>
 
-            {/* Account Dropdown */}
-            <div className="relative z-[9999]" ref={accountRef}>
-              <button
-                onClick={() => setIsAccountDropdownOpen((prev) => !prev)}
-                className="flex flex-col items-center justify-center text-white focus:outline-none"
-              >
+            {/* Account */}
+            {user ? (
+              <Link to="/profile" className="flex flex-col items-center justify-center">
+                <User className="w-6 h-6" />
+                <span className="hidden md:block text-xs mt-1">{user.full_name}</span>
+              </Link>
+            ) : (
+              <Link to="/login" className="flex flex-col items-center justify-center">
                 <User className="w-6 h-6" />
                 <span className="hidden md:block text-xs mt-1">Account</span>
-              </button>
-
-              {isAccountDropdownOpen && (
-                <div className="absolute right-0 mt-2 w-36 bg-white rounded-md shadow-lg z-[9999]">
-                  {/* Welcome Text */}
-                  <div className="px-4 py-3 text-xs text-gray-700 font-semibold leading-tight">
-                    <div>Welcome,</div>
-                    <div className="text-lg font-regural text-[#501614]">Prashanth</div>
-                  </div>
-                  <hr className="border-t" />
-                  {/* Logout Button */}
-                  <div className="flex justify-center items-center px-4 py-2">
-                    <button
-                      className="bg-[#f8e8e6] text-[#501614] px-4 py-1.5 rounded-md text-sm font-semibold hover:bg-[#f3d2ce] transition"
-                      onClick={() => {
-                        console.log('Logout clicked');
-                        // logout logic here
-                      }}
-                    >
-                      Logout
-                    </button>
-                  </div>
-                </div>
-              )}
-            </div>
+              </Link>
+            )}
 
             {/* Wishlist */}
             <Link
               to="/wishlist"
               className="relative flex flex-col items-center justify-center"
+              onClick={() => window.scrollTo(0, 0)}
             >
               <Heart className="w-6 h-6" />
-              <Badge className="absolute top-[-14px] right-[-12px] text-xs">0</Badge>
+              {wishCount > 0 && (
+                <Badge className="absolute top-[-14px] right-[-12px] text-xs">
+                  {wishCount > 9 ? '9+' : wishCount}
+                </Badge>
+              )}
               <span className="hidden md:block text-xs mt-1">Wishlist</span>
             </Link>
 
             {/* Cart */}
-            <a href="/cart" className="relative flex flex-col items-center justify-center">
+            <Link
+              to="/cart"
+              className="relative flex flex-col items-center justify-center"
+              onClick={() => window.scrollTo(0, 0)}
+            >
               <ShoppingCart className="w-6 h-6" />
-              <Badge className="absolute top-[-14px] right-[-12px] text-xs">0</Badge>
+              {cartCount > 0 && (
+                <Badge className="absolute top-[-14px] right-[-12px] text-xs">
+                  {cartCount > 9 ? '9+' : cartCount}
+                </Badge>
+              )}
               <span className="hidden md:block text-xs mt-1">Cart</span>
-            </a>
+            </Link>
+
+            {/* Orders */}
+            <Link
+              to="/orders"
+              className="flex flex-col items-center justify-center"
+              onClick={() => window.scrollTo(0, 0)}
+            >
+              <Truck className="w-6 h-6" />
+              <span className="hidden md:block text-xs mt-1">Orders</span>
+            </Link>
+
+            {/* Logout */}
+            {user && (
+              <Button
+                variant="ghost"
+                size="sm"
+                className="bg-white text-[#501614] cursor-pointer"
+                onClick={handleLogout}
+              >
+                Logout
+              </Button>
+            )}
           </div>
         </div>
       </div>
 
       {/* Mega Menu */}
-      <div className="relative z-[100]">
-        <MegaMenu isOpen={isMegaOpen} />
-      </div>
+      <MegaMenu isOpen={false} />
 
       {/* Mobile Menu */}
       <MobileMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
