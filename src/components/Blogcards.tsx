@@ -36,10 +36,10 @@ const BlogCard = ({
 
       {/* Text Content */}
       <div className="p-3 flex flex-col flex-1">
-        <p className="text-xs text-gray-500 mb-1">
+        <p className="text-sm text-gray-500 mb-1">
           {date} • {readTime}
         </p>
-        <h2 className="text-base font-medium text-gray-800 group-hover:text-[#800000] transition-colors duration-300 min-h-[48px]">
+        <h2 className="font-medium text-2xl text-gray-700 group-hover:text-[#800000] transition-colors duration-300 min-h-[48px] font-serif">
           {headline}
         </h2>
       </div>
