@@ -105,47 +105,36 @@ const ProductDetail = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Product Images */}
-          <div className="space-y-4">
-            {/* Zoomable Image */}
-            <div className="max-w-[600px] mx-auto rounded-lg bg-white overflow-hidden border">
-              <TransformWrapper
-                initialScale={1}
-                minScale={1}
-                maxScale={3}
-                doubleClick={{ disabled: true }}
-                wheel={{ step: 0.1 }}
-              >
-                <TransformComponent>
-                  <img
-                    src={product.images[selectedImage]}
-                    alt={product.name}
-                    className="w-full h-auto object-contain rounded-lg"
-                  />
-                </TransformComponent>
-              </TransformWrapper>
-            </div>
+         <div className="space-y-4">
+  {/* Static Image (No Zoom) */}
+  <div className="max-w-[600px] mx-auto rounded-lg bg-white overflow-hidden border">
+    <img
+      src={product.images[selectedImage]}
+      alt={product.name}
+      className="w-full h-auto object-contain rounded-lg"
+    />
+  </div>
 
-            {/* Thumbnails */}
-            <div className="flex justify-center space-x-3">
-              {product.images.map((image, index) => (
-                <button
-                  key={index}
-                  onClick={() => setSelectedImage(index)}
-                  className={`w-16 h-16 rounded-md overflow-hidden border-2 ${
-                    selectedImage === index
-                      ? "border-golden"
-                      : "border-gray-200"
-                  }`}
-                >
-                  <img
-                    src={image}
-                    alt={`${product.name} ${index + 1}`}
-                    className="w-full h-full object-cover"
-                  />
-                </button>
-              ))}
-            </div>
-          </div>
+  {/* Thumbnails */}
+  <div className="flex justify-center space-x-3">
+    {product.images.map((image, index) => (
+      <button
+        key={index}
+        onClick={() => setSelectedImage(index)}
+        className={`w-16 h-16 rounded-md overflow-hidden border-2 ${
+          selectedImage === index ? "border-golden" : "border-gray-200"
+        }`}
+      >
+        <img
+          src={image}
+          alt={`${product.name} ${index + 1}`}
+          className="w-full h-full object-cover"
+        />
+      </button>
+    ))}
+  </div>
+</div>
+
 
           {/* Product Details */}
           <div className="space-y-6">
