@@ -174,21 +174,22 @@ const MegaMenu = ({ isOpen }: MegaMenuProps) => {
             {isGoldRateOpen && (
               <div className="absolute top-full left-0 mt-0 w-max bg-white shadow-xl z-50 text-center border-t-2 border-golden animate-fade-in">
                 <div className="p-4">
-                  <h3 className="font-semibold text-maroon text-md mb-3">Today's Gold Rate</h3>
+                  <h3 className="font-medium text-maroon text-md mb-3">Today's Gold Rate</h3>
                   <div className="space-y-2 text-center text-base text-gray-800">
                       <p>
                         <span className="font-semibold">22 KT (916)</span> - ₹ 9380/g
                       </p>
-                    <hr className="my-2 border-t border-gray-200 w-3/4 mx-auto" />
+                    <hr className="my-2 border-t border-gray-300 w-4/4 mx-auto" />
                     <p>
                       <span className="font-semibold">18 KT (916)</span> - ₹ 7680/g
                     </p>
-                    <hr className="my-2 border-t border-gray-200 w-3/4 mx-auto" />
+                    <hr className="my-2 border-t border-gray-300 w-4/4 mx-auto" />
                     <p>
                       <span className="font-semibold">14 KT (585)</span> - ₹ 6180/g
                     </p>
+                    <hr className="my-2 border-t border-gray-300 w-4/4 mx-auto" />
                   </div>
-                  <div className="mt-4 text-xs text-gray-700">
+                  <div className="mt-4 text-sm text-gray-700">
                     <p>Updated on : 23/07/2025</p>
                     <p>09:53 AM</p>
                   </div>
