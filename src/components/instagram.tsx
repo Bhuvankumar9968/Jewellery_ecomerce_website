@@ -16,13 +16,13 @@ const instagramPosts = [
   },
   {
     postUrl: 'https://www.instagram.com/reel/DLbnDxJzkQM/',
-    embedUrl: 'https://www.instagram.com/reel/DLbnDxJzkQM/embed/',
+    embedUrl: 'https://www.instagram.com/reel/DLbnDxJzkQM/embed/captioned/',
     caption: 'REPLACE THIS: This reel will now autoplay.',
     isReel: true, // This is a video reel
   },
   {
     postUrl: 'https://www.instagram.com/reel/DLKklgPNhg8/',
-    embedUrl: 'https://www.instagram.com/reel/DLKklgPNhg8/embed/',
+    embedUrl: 'https://www.instagram.com/reel/DLKklgPNhg8/embed/captioned/',
     caption: 'REPLACE THIS: Another autoplaying video.',
     isReel: true, // This is a video reel
   },
@@ -34,7 +34,7 @@ const instagramPosts = [
   },
   {
     postUrl: 'https://www.instagram.com/reel/DLCgrbLP_21/',
-    embedUrl: 'https://www.instagram.com/reel/DLCgrbLP_21/embed/',
+    embedUrl: 'https://www.instagram.com/reel/DLCgrbLP_21/embed/captioned/',
     caption: 'REPLACE THIS: And one more autoplaying reel!',
     isReel: true, // This is a video reel
   },
@@ -52,7 +52,7 @@ const instagramPosts = [
   },
   {
     postUrl: 'https://www.instagram.com/reel/C8o3T_oS-Oq/', // Example Reel
-    embedUrl: 'https://www.instagram.com/reel/C8o3T_oS-Oq/embed/',
+    embedUrl: 'https://www.instagram.com/reel/C8o3T_oS-Oq/embed/captioned/',
     caption: 'REPLACE THIS: This final reel will also autoplay.',
     isReel: true,
   },
@@ -110,8 +110,7 @@ const Testimonials = () => {
                 <iframe
                   src={post.embedUrl}
                   title={`Instagram Post ${index + 1}`}
-                  // The allow attribute enables autoplay for videos
-                  allow={post.isReel ? "autoplay; encrypted-media" : "encrypted-media"}
+                  allow="autoplay; encrypted-media"
                   allowFullScreen
                   frameBorder="0"
                   className="w-full h-full"

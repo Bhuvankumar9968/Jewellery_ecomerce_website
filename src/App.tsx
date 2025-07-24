@@ -11,6 +11,8 @@ import Wishlist from "./pages/Wishlist";
 import NotFound from "./pages/NotFound";
 import ShoppingCart from "./pages/ShoppingCart"
 import Checkout from "./pages/Checkout";
+import Blog from "./pages/Blog";
+import BlogDetails from "./pages/BlogDetails"; // Assuming you have a BlogDetails page
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -27,6 +29,8 @@ const App = () => (
           <Route path="/Cart" element={<ShoppingCart />} />
           <Route path="/wishlist" element={<Wishlist />} />
           <Route path="/checkout" element={<Checkout />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blogDetails" element={<BlogDetails />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
