@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import Ring1 from "@/assets/Ring-1.png";
 import Ring2 from "@/assets/Ring-2.png";
 import Ring3 from "@/assets/Ring-3.png";
+import FeaturedCollections from "@/components/FeaturedCollections";
 
 const ProductDetail = () => {
   const [quantity, setQuantity] = useState(1);
@@ -179,9 +180,9 @@ const ProductDetail = () => {
         </div>
 
         {/* Detailed Info Section */}
-        <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+        <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-4 items-start">
           {/* Left Column */}
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-4">
             {/* Product Information Box */}
             <div className="border p-6 rounded-lg bg-gray-50">
               <h3 className="font-semibold text-lg mb-4 text-maroon">Product Information</h3>
@@ -225,7 +226,7 @@ const ProductDetail = () => {
           </div>
         </div>
       </div>
-
+              <FeaturedCollections />
       <Footer />
     </div>
   );

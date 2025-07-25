@@ -23,7 +23,7 @@ const Header = ({ user, cartCount = 0, wishCount = 0, handleLogout }) => {
   return (
     <header className="bg-[#501614] shadow-md sticky top-0 z-50">
       {/* Top Row - Contact Info */}
-      <div className="hidden md:flex justify-end items-center px-6 py-2 bg-[#3c1010] text-white text-sm space-x-6">
+      <div className="hidden md:flex justify-end items-center px-6 py-2 text-white text-sm space-x-6">
         <a
           href="tel:+919513777001"
           className="flex items-center space-x-1 hover:underline transition"
