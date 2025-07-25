@@ -9,7 +9,7 @@ const TopBar = () => {
     if (!isVisible) return null;
 
     return (
-        <div className="flex justify-center items-center bg-[#871f1b] text-white py-2 px-4 sm:px-6 text-sm relative">
+        <div className="flex justify-center items-center bg-[#641b19] text-white py-2 px-4 sm:px-6 text-sm relative">
             {/* Centered Text */}
             <div className="font-medium text-center text-xs sm:text-sm">
                 For Store and Scheme Queries: 81210 06820
