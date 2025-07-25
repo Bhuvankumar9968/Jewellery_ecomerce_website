@@ -16,7 +16,7 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
       }`}
     >
       <div className="flex items-center justify-between px-4 py-3 border-b">
-        <div className="w-14 h-14 rounded-full overflow-hidden">
+        <div className="w-auto h-14 overflow-hidden">
           <img src={logo} alt="Logo" className="w-full h-full object-cover" />
         </div>
         <button onClick={onClose} className="text-maroon">
