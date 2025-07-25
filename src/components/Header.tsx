@@ -57,7 +57,7 @@ const Header = ({ user, cartCount = 0, wishCount = 0, handleLogout }) => {
                 <Menu className="w-5 h-5" />
               </Button>
             </div>
-            <div className="w-16 h-16 rounded-full overflow-hidden mx-auto">
+            <div className="w-auto h-14  overflow-hidden mx-auto">
               <Link to="/">
                 <img
                   src={logo}
