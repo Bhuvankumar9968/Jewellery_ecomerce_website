@@ -109,8 +109,8 @@ const InstagramSection = () => {
         <Swiper modules={[Autoplay]} spaceBetween={16} slidesPerView={6} autoplay={{ delay: 0, disableOnInteraction: false }} speed={3000} loop={true} className="hidden md:block">
           {instaPosts.map(renderSlide)}
         </Swiper>
-        {/* Mobile Swiper */}
-        <Swiper modules={[Autoplay]} spaceBetween={12} slidesPerView={3} autoplay={{ delay: 0, disableOnInteraction: false }} speed={3000} loop={true} className="md:hidden">
+        {/* Mobile Swiper --- UPDATED slidesPerView to 2 */}
+        <Swiper modules={[Autoplay]} spaceBetween={12} slidesPerView={2} autoplay={{ delay: 0, disableOnInteraction: false }} speed={3000} loop={true} className="md:hidden">
           {instaPosts.map(renderSlide)}
         </Swiper>
       </div>
