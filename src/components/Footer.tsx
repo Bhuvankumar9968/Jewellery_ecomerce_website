@@ -25,9 +25,9 @@ const Footer = () => {
       <div className="grid md:grid-cols-5 gap-14 border-b border-gray-600 pb-14">
         {/* GET IN TOUCH */}
         <div className="space-y-6">
-          <h3 className="font-semibold text-lg">SWARNA KANCHI</h3>
+          <h3 className="font-semibold text-lg">Abharan</h3>
           <p className="text-gray-300 leading-relaxed">
-            Swarna Kanchi Jewellers brings the heritage of Kanchipuram to life through exquisite gold craftsmanship. Tradition, elegance, and purity—crafted for every celebration.
+            Abharan Jewellers brings the heritage of Kanchipuram to life through exquisite gold craftsmanship. Tradition, elegance, and purity—crafted for every celebration.
           </p>
 
           {/* Social Icons */}
@@ -46,7 +46,7 @@ const Footer = () => {
           <ul className="space-y-3">
             <li className={footerLinkClass}>Our Story</li>
             <li className={footerLinkClass}>Why Buy From Us</li>
-            <li className={footerLinkClass}>SwarnaKanchi</li>
+            <li className={footerLinkClass}>Abharan</li>
             <li className={footerLinkClass}>Corporate Gifting</li>
             <li className={footerLinkClass}>Blog Posts</li>
             <li className={footerLinkClass}>Press Releases</li>
@@ -71,7 +71,7 @@ const Footer = () => {
           <h3 className="font-semibold text-lg">NEED HELP?</h3>
           <ul className="space-y-3">
             <li className={footerLinkClass}>Locate Our Stores</li>
-            <li className={footerLinkClass}>SwarnaKanchi Authorized Dealers</li>
+            <li className={footerLinkClass}>Abharan Authorized Dealers</li>
             <li className={footerLinkClass}>Franchise Enquiry</li>
             <li className={footerLinkClass}>Contact Us</li>
             <li className={footerLinkClass}>Careers</li>
@@ -84,15 +84,15 @@ const Footer = () => {
           <h3 className="font-semibold text-lg">CUSTOMER SUPPORT</h3>
           <ul className="space-y-3 text-gray-300">
             <li>
-              <a href="tel:+919513777001" className={footerLinkClass}>
-              +91 9513777001
+              <a href="tel:+918548809968" className={footerLinkClass}>
+              +91 8548809968
               </a>
             </li>
             <li>9:00am – 6:00pm IST | Mon - Fri</li>
             <li>9:00am – 4:00pm IST | Sat</li>
             <li>
-              <a href="mailto:support@SwarnaKanchi.com" className={footerLinkClass}>
-                support@SwarnaKanchi.com
+              <a href="mailto:support@Abharan.com" className={footerLinkClass}>
+                support@Abharan.com
               </a>
             </li>
           </ul>
@@ -101,7 +101,7 @@ const Footer = () => {
 
       {/* Bottom Footer */}
       <div className="flex flex-col md:flex-row items-center justify-between mt-12 gap-6 text-gray-300 text-sm">
-        <p>© 2025 SwarnaKanchi. All Rights Reserved</p>
+        <p>© 2025 Abharan. All Rights Reserved</p>
         <div className="flex gap-6">
           <span className={footerLinkClass}>Privacy Policy</span>
           <span className={footerLinkClass}>Terms & Conditions</span>

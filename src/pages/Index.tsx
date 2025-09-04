@@ -1,5 +1,5 @@
 import React from 'react';
-import TopBar from '@/components/TopBar';
+// import TopBar from '@/components/TopBar';
 import Header from '@/components/Header';
 import HeroCarousel from '@/components/HeroCarousel';
 import FeaturedCollections from '@/components/FeaturedCollections';
@@ -23,7 +23,7 @@ import Footer from '@/components/Footer';
 const Index = () => {
   return (
     <div className="min-h-screen bg-muted">
-      <TopBar />
+      {/* <TopBar /> */}
       <Header />
       <main>
         <HeroCarousel />
@@ -35,15 +35,15 @@ const Index = () => {
         <PlatinumSection />
         <ShopByGender />
         <FeaturedCollections />
-        <WhyChooseUs />
+        {/* <WhyChooseUs /> */}
         <GiftingJewellerySection />
-        <VideoGallery />
-        <TrendingProducts />
-        <InstagramSection />
+        {/* <VideoGallery /> */}
+        {/* <TrendingProducts /> */}
+        {/* <InstagramSection /> */}
         
-        <ElfsightInstagramFeed />
+        {/* <ElfsightInstagramFeed /> */}
 
-        <StoreLocation />
+        {/* <StoreLocation /> */}
         
         {/* <Newsletter /> */}
       </main>

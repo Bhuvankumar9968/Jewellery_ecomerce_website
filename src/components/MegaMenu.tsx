@@ -127,7 +127,7 @@ const MegaMenu = ({ isOpen }: MegaMenuProps) => {
         })}
 
         {/* GOLD SAVING PLANS DROPDOWN WRAPPER */}
-        <div 
+        {/* <div 
             className="relative"
             onMouseEnter={() => {
                 setSavingsPlanOpen(true);
@@ -153,7 +153,7 @@ const MegaMenu = ({ isOpen }: MegaMenuProps) => {
                 </ul>
              </div>
           )}
-        </div>
+        </div> */}
 
         {/* GOLD RATE DROPDOWN WRAPPER */}
         <div 
